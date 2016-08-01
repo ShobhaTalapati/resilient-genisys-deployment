@@ -1,0 +1,12 @@
+{% set source = salt['grains.filter_by']({
+        'private_api'     : { 'dir': 'Private_API_with_GF4' },
+        'private_api_gf3' : { 'dir': 'Private_API' },
+        'public_api'      : { 'dir': 'Public_API' },
+        'portal_api'      : { 'dir': 'Portal' },
+        'april_proc'      : { 'dir': 'April_Processor' },
+        'jbilling_api'    : { 'dir': 'jBilling_API_Batch_and_Liquibase' },
+        'jbilling_batch'  : { 'dir': 'jBilling_API_Batch_and_Liquibase' },
+    },
+    grain='roles:0',
+    default='private_api'
+)%}
